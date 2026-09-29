@@ -1,33 +1,28 @@
-name: Cypress tests
+name: Cypress API tests
 
 on:
   push:
   pull_request:
 
 jobs:
-  imdb:
-    name: IMDb tests (${{ matrix.browser }})
+  api:
+    name: PokéAPI tests
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, firefox]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-      - name: Run IMDb tests
+      - name: Run API tests
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ matrix.browser }}
-          command: npm run test:${{ matrix.browser }} -- --spec cypress/e2e/Imdb/**/*.feature
+          command: npm run test:api
       - name: Upload Cypress artifacts
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-${{ matrix.browser }}-artifacts
+          name: cypress-api-artifacts
           path: |
             cypress/screenshots
             cypress/videos

@@ -12,7 +12,7 @@ Install dependencies with `npm ci`, then run one of the following commands:
 - `npm run test:imdb` — IMDb feature tests only
 - `npm run test:api` — PokéAPI tests only
 
-The GitHub Actions workflow runs the IMDb test suite in both Chrome and Firefox. Cypress screenshots and videos are uploaded when a run fails. IMDb is a third-party, dynamic website, so tests may need selector maintenance after UI changes.
+GitHub Actions runs the PokéAPI suite because IMDb blocks requests from GitHub-hosted runners with a 403 response. Run the IMDb suite locally in Chrome or Firefox instead. Cypress screenshots and videos are uploaded when a CI run fails.
 
 Please create a git repository and send a link to it as part of your solution.
 Your checklist is the following one:
