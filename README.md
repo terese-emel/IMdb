@@ -2,6 +2,18 @@
 
 ## IMdb
 
+## Running the test suite
+
+Install dependencies with `npm ci`, then run one of the following commands:
+
+- `npm test` — all configured Cypress tests in headless mode
+- `npm run test:chrome` — all tests in Chrome
+- `npm run test:firefox` — all tests in Firefox
+- `npm run test:imdb` — IMDb feature tests only
+- `npm run test:api` — PokéAPI tests only
+
+The GitHub Actions workflow runs the IMDb test suite in both Chrome and Firefox. Cypress screenshots and videos are uploaded when a run fails. IMDb is a third-party, dynamic website, so tests may need selector maintenance after UI changes.
+
 Please create a git repository and send a link to it as part of your solution.
 Your checklist is the following one:
 

@@ -1,0 +1,31 @@
+name: Cypress tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  imdb:
+    name: IMDb tests (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, firefox]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run test:${{ matrix.browser }} -- --spec "cypress/e2e/Imdb/**/*.feature"
+      - name: Upload Cypress artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-${{ matrix.browser }}-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore

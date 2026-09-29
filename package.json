@@ -4,10 +4,11 @@
   "description": "QA Challenges",
   "main": "cypress.config.js",
   "scripts": {
-    "test:chrome": "npx cypress open --e2e --browser chrome test:all",
-    "test:firefox": "npx cypress open --e2e --browser firefox test:all",
-    "test": "cypress open --e2e --browser chrome",
-    "test:all": "cypress run --spec \"**/*.features\""
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:imdb": "cypress run --spec \"cypress/e2e/Imdb/**/*.feature\"",
+    "test:api": "cypress run --spec \"cypress/e2e/Api/**/*.cy.js\""
   },
   "repository": {
     "type": "git",
@@ -27,8 +28,5 @@
   "cypress-cucumber-preprocessor": {
     "step_definitions": "cypress/support/step_definitions/Imdb",
     "nonGlobalStepDefinitions": false
-  },
-  "dependencies": {
-    "@esbuild/darwin-x64": "^0.23.0"
   }
 }

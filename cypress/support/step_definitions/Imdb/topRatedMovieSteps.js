@@ -17,8 +17,8 @@ When('I click on the "IMDb Rating" button', () => {
 When('I click on the "Rate" button', () => {
   cy.get("[data-testid=hero-rating-bar__user-rating__unrated]")
     .contains("Rate")
-    .wait(5000)
-    .click({ force: true });
+    .should("be.visible")
+    .click();
 });
 
 Then("I see the rating modal", () => {
@@ -28,7 +28,8 @@ Then("I see the rating modal", () => {
 When("I set the rating to 5 stars", () => {
   cy.get(".ipc-starbar__rating__button")
     .eq(4)
-    .click({ force: true })
+    .should("be.visible")
+    .click()
     .get(".ipc-rating-display__rating")
     .contains("5");
 });
