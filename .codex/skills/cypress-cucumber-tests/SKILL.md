@@ -23,7 +23,7 @@ Create readable, executable acceptance tests without turning feature files into 
 ## Step definitions
 
 - Map each step to focused Cypress commands and assertions. Keep navigation, action, and verification distinct where it improves diagnosis.
-- Prefer application-owned `data-testid` hooks. Otherwise use scoped semantic selectors, accessible names, or stable attributes.
+- Use application-owned `data-test-id` hooks for test selectors. Treat this exact attribute name as the project convention; otherwise use scoped semantic selectors, accessible names, or stable attributes.
 - Assert a relevant visible, enabled, loaded, or navigated state rather than using fixed waits. Do not use `force: true` to bypass an interaction problem.
 - Keep test data explicit and deterministic. For APIs, assert response status and only the response fields needed by the scenario.
 - Avoid global mutable state. Use hooks only for repeated setup that does not hide scenario intent.
