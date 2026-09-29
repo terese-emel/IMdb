@@ -1,0 +1,3 @@
+interface:
+  display_name: "Cypress Locator Healing"
+  short_description: "Diagnose and repair broken Cypress selectors"
