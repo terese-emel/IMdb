@@ -22,7 +22,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          command: npm run test:${{ matrix.browser }} -- --spec "cypress/e2e/Imdb/**/*.feature"
+          command: npm run test:${{ matrix.browser }} -- --spec cypress/e2e/Imdb/**/*.feature
       - name: Upload Cypress artifacts
         if: failure()
         uses: actions/upload-artifact@v4
