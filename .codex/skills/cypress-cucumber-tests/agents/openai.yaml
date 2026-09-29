@@ -1,0 +1,3 @@
+interface:
+  display_name: "Cypress Cucumber Tests"
+  short_description: "Write Cypress tests with Cucumber and Gherkin"
