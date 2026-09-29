@@ -18,7 +18,7 @@ Repair locator breakage without broadening the test's intent or hiding a real pr
 
 Choose selectors in this order when the UI supports them:
 
-1. Application-owned `data-testid` or equivalent test hooks.
+1. Application-owned `data-test-id` or equivalent test hooks.
 2. Semantic queries scoped to a relevant container, with visible labels or accessible names.
 3. Stable semantic attributes such as a named input or a meaningful `aria-*` value.
 4. Text only when the copy is deliberately stable and the query is narrowly scoped.
